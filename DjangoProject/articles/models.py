@@ -11,3 +11,8 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+    def snippet(self):
+        if(len(self.body) < 50):
+            return self.body
+        return self.body[:50] + '...'
